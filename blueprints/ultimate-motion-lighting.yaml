@@ -1,5 +1,5 @@
 blueprint:
-  name: Motion-based lighting with multiple time periods (RGB, scenes, or switches)
+  name: Advanced Time + Motion-Based Lighting Control
   description: >
     When motion is detected, turn on different lights/brightness/RGB, scenes, or switches
     depending on the current time period, then turn them off after a configurable
@@ -84,7 +84,7 @@ blueprint:
         number:
           min: 1
           max: 100
-          unit_of_measurement: '%'
+          unit_of_measurement: "%"
           mode: slider
     period1_color:
       name: Period 1 RGB color
@@ -156,7 +156,7 @@ blueprint:
         number:
           min: 1
           max: 100
-          unit_of_measurement: '%'
+          unit_of_measurement: "%"
           mode: slider
     period2_color:
       name: Period 2 RGB color
@@ -228,7 +228,7 @@ blueprint:
         number:
           min: 1
           max: 100
-          unit_of_measurement: '%'
+          unit_of_measurement: "%"
           mode: slider
     period3_color:
       name: Period 3 RGB color
@@ -300,7 +300,7 @@ blueprint:
         number:
           min: 1
           max: 100
-          unit_of_measurement: '%'
+          unit_of_measurement: "%"
           mode: slider
     period4_color:
       name: Period 4 RGB color
@@ -372,7 +372,7 @@ blueprint:
         number:
           min: 1
           max: 100
-          unit_of_measurement: '%'
+          unit_of_measurement: "%"
           mode: slider
     period5_color:
       name: Period 5 RGB color
@@ -444,7 +444,7 @@ blueprint:
         number:
           min: 1
           max: 100
-          unit_of_measurement: '%'
+          unit_of_measurement: "%"
           mode: slider
     period6_color:
       name: Period 6 RGB color
@@ -496,7 +496,7 @@ variables:
 trigger:
   - platform: state
     entity_id: !input motion_sensors
-    to: 'on'
+    to: "on"
 
 action:
   - choose:
@@ -540,7 +540,7 @@ action:
           - wait_for_trigger:
               - platform: state
                 entity_id: !input motion_sensors
-                to: 'off'
+                to: "off"
                 for: !input period1_off_delay
 
           - choose:
@@ -594,7 +594,7 @@ action:
           - wait_for_trigger:
               - platform: state
                 entity_id: !input motion_sensors
-                to: 'off'
+                to: "off"
                 for: !input period2_off_delay
 
           - choose:
@@ -648,7 +648,7 @@ action:
           - wait_for_trigger:
               - platform: state
                 entity_id: !input motion_sensors
-                to: 'off'
+                to: "off"
                 for: !input period3_off_delay
 
           - choose:
@@ -702,7 +702,7 @@ action:
           - wait_for_trigger:
               - platform: state
                 entity_id: !input motion_sensors
-                to: 'off'
+                to: "off"
                 for: !input period4_off_delay
 
           - choose:
@@ -756,7 +756,7 @@ action:
           - wait_for_trigger:
               - platform: state
                 entity_id: !input motion_sensors
-                to: 'off'
+                to: "off"
                 for: !input period5_off_delay
 
           - choose:
@@ -810,7 +810,7 @@ action:
           - wait_for_trigger:
               - platform: state
                 entity_id: !input motion_sensors
-                to: 'off'
+                to: "off"
                 for: !input period6_off_delay
 
           - choose:
